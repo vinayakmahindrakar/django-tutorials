@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+</head>
+<body>
+	<form method="POST" class="post-form" action="/update/{{employee.id}}">
+		{% csrf_token %}
+		<div class="container">
+			<h3>Upate Details</h3>
+			<div class="form-group">
+			    <label for="eid">Employee Id:</label>
+			    <input type="text" name="eid" id="eid" required maxlength="20" value="{{ employee.eid }}" />
+			</div>
+			<div class="form-group">
+			    <label for="ename">Employee Name:</label>
+			    <input type="text" name="ename" id="ename"	required maxlength="100" value="{{ employee.ename }}" />
+			</div>
+			<div class="form-group">
+			    <label for="email">Employee Email:</label>
+			    <input type="text" name="email" id="email" required maxlength="254" value="{{ employee.email }}" />
+			</div>
+			<div class="form-group">
+			    <label for="econtact">Employee Id:</label>
+			    <input type="text" name="econtact" id="econtact" required maxlength="254" value="{{ employee.econtact }}" />
+			</div>
+			<button type="submit">Submit</button>
+		</div>
+	</form>
+</body>
+</html>

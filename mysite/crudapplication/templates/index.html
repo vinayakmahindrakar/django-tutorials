@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+</head>
+<body>
+	<form method="POST" class="post-form" action="/emp">
+		{% csrf_token %}
+		<div class="container">
+			<div class="form-group">
+			    <label for="email">Employee Id:</label>
+			    {{ form.eid }}
+			</div>
+			<div class="form-group">
+			    <label for="email">Employee Name:</label>
+			    {{ form.ename }}
+			</div>
+			<div class="form-group">
+			    <label for="email">Employee Email:</label>
+			    {{ form.email }}
+			</div>
+			<div class="form-group">
+			    <label for="email">Employee Contact:</label>
+			    {{ form.econtact }}
+			</div>
+			<button type="submit">Submit</button>
+		</div>
+	</form>
+</body>
+</html>

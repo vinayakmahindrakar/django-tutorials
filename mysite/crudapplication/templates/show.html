@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Employee Id</th>
+				<th>Employee Name</th>
+				<th>Employee Email</th>
+				<th>Employee Contact</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for employee in employees %}
+			<tr>
+				<td>{{ employee.eid }}</td>
+				<td>{{ employee.ename }}</td>
+				<td>{{ employee.eemail }}</td>
+				<td>{{ employee.econtact }}</td>
+				<td>
+					<a href="/edit/{{ employee.id }}"><span>Edit</span></a>
+					<a href="/delete/{{ employee.id }}"><span>Delete</span></a>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<a href="/emp">Add New Record</a>
+</body>
+</html>
